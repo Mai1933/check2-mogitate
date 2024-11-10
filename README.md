@@ -25,7 +25,7 @@
 
 ## ER 図
 
-![ER drawio](https://github.com/user-attachments/assets/39f1ac18-9a40-4a40-b582-17f56c2158a1)
+![ER drawio](https://github.com/user-attachments/assets/221367d2-80dd-4cf3-9ab8-f4c290d1763d)
 
 ## URL
 
