@@ -1,0 +1,135 @@
+.products {
+  background: #F8F8F8;
+  margin-top: 0;
+  padding: 0 3%;
+  height: 120vh;
+}
+
+.products_ttls {
+  padding: 5% 1% 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.products_ttls-ttl {
+  color: #333;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.products_ttls-register {
+  display: flex;
+  width: 137px;
+  height: 50px;
+  padding: 13px 20px;
+  align-items: center;
+  border-radius: 5px;
+  background: #FFA929;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.10);
+}
+
+.products_content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.products_content_search {
+  width: 20%;
+}
+
+.search_name {}
+
+.search_name_input {
+  width: 100%;
+  height: 5%;
+  padding: 14.5px 10px;
+  align-items: center;
+  border-radius: 25px;
+  border: 1px solid #E0DFDE;
+  background: #FFF;
+  color: #E0DFDE;
+  font-size: 14px;
+  margin-bottom: 7%;
+}
+
+.search_name_submit {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: none;
+  background: #F5C800;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.10);
+  color: #4B4B4B;
+  font-size: 16px;
+  font-style: normal;
+}
+
+.search_sort {
+  margin-top: 20%;
+  border-bottom: 1px solid #E0DFDE;
+  padding-bottom:15% ;
+}
+
+.search_sort_ttl {
+  color: #333;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.search_sort_select {
+  display: flex;
+  width: 100%;
+  padding: 11px 10px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid #E0DFDE;
+  background: #FFF;
+  color: #E0DFDE;
+  font-size: 14px;
+  font-style: normal;
+}
+
+.products_content_cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 75%;
+  height: 70%;
+  margin-left: 5%;
+}
+
+.card {
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+  display: flex;
+  flex-direction: column;
+  width: 32%;
+  height: 40%;
+  margin-right: 1%;
+  margin-bottom: 1%;
+}
+
+.card_img {
+}
+
+.card_names {
+}
+
+.card_names-name {
+  color: #4B4B4B;
+  font-size: 24px;
+  font-style: normal;
+}
+
+.card_names-price {
+  color: #4B4B4B;
+  font-size: 24px;
+  font-style: normal;
+}

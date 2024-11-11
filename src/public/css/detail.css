@@ -1,0 +1,197 @@
+.products {
+  background: #F8F8F8;
+  margin-top: 0;
+  padding-bottom: 7%;
+  padding-top: 5%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.products_content {
+  width: 53%;
+}
+
+.products_content_index {}
+
+form {
+  width: 100%;
+}
+
+.index_link {
+  color: #0085FF;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.index_fruit {
+  color: #4B4B4B;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.products_content_info-wrap {
+  width: 100%;
+  display: flex;
+  align-items: first baseline;
+  justify-content: space-between;
+}
+
+.info_imgs {
+  width: 46%;
+  min-width: 300px;
+}
+
+.upload_img {}
+
+.input_img {}
+
+.info_others {
+  width: 50%;
+  min-width: 350px;
+}
+
+.info_name {
+  color: #4B4B4B;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  margin-top: 7%;
+}
+
+.input_name {
+  display: flex;
+  width: 100%;
+  aspect-ratio: 9/1;
+  height: 43px;
+  color: #4B4B4B;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+
+.input_season {
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.season_label::after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 50%;
+  left: 15px;
+  margin: -10px 0 0 -2px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.season_label {
+  position: relative;
+  padding: 0 0 0 40px;
+  font-size: 18px;
+}
+
+.season_label:hover::after{
+  background-color: rgba(75, 75, 75, 1);
+}
+
+.season_label::after,.season_label::before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 50%;
+}
+
+.season_label::before {
+  left: 13px;
+  margin-top: -10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  content: "✓";
+  color: #fff;
+  background-color: rgba(75, 75, 75, 1);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+}
+
+input[type=checkbox]:checked+.season_label::before {
+  opacity: 1;
+}
+
+.products_content_info-descriptions {
+  width: 100%;
+}
+
+.input_detail {
+  width: 100%;
+  height: 160px;
+  min-width: 650px;
+  resize: none;
+  color: #4B4B4B;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.products_content_buttons {
+  margin-top: 10%;
+  display: flex;
+  width: 100%;
+}
+
+.button_back {
+  display: flex;
+  width: 25%;
+  aspect-ratio: 5/1;
+  padding: 13px 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #E0DFDE;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.10);
+  border: none;
+  color: #4B4B4B;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  margin-right: 2%;
+  margin-left: 24%;
+}
+
+.button_store {
+  display: flex;
+  width: 25%;
+  aspect-ratio: 5/1;
+  padding: 13px 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #F5C800;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.10);
+  border: none;
+  color: #4B4B4B;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  margin-right: 20%;
+  height: auto;
+}
+
+.button_delete {
+  width: 4%;
+  aspect-ratio: 1/1;
+}
+
+.button_delete-img {
+  z-index: 100;
+}

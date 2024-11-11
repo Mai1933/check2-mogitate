@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'jsMath-cmti10';
+  src: url('../fonts/jsMath-cmti10.ttf') format('truetype');
+}
+
+.header {
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  border-bottom: 1px solid #F4F4F4;
+  background: #FFF;
+}
+
+.header_ttl-logo {
+  font-family: 'jsMath-cmti10',sans-serif;
+  color: #F5C800;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+}

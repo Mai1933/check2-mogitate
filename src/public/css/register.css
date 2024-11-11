@@ -1,0 +1,177 @@
+.register {
+  background: #F8F8F8;
+  margin-top: 0;
+  padding-bottom: 7%;
+  padding-top: 3%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.register_content {
+  width: 50%;
+}
+
+.register_form-ttl {
+  color: #333;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.register_form {}
+
+.input_ttls_row {
+  margin-top: 5%;
+  margin-bottom: 2%;
+  display: flex;
+  align-items: center;
+}
+
+.input_ttl {
+  color: #4B4B4B;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.input_require {
+  color: #FFF;
+  font-family: "Hiragino Kaku Gothic Pro";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  padding: 1px 5px;
+  background: #FD0707;
+  margin: 0 2%;
+}
+
+.input_content {
+  color: #E0DFDE;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  width: 100%;
+  aspect-ratio: 18/1;
+}
+
+.input_img {
+}
+
+.input_multiple {
+  color: #FD0707;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.input_season {}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.season_label::after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 50%;
+  left: 15px;
+  margin: -10px 0 0 -2px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.season_label {
+  position: relative;
+  padding: 0 0 0 40px;
+  font-size: 18px;
+}
+
+.season_label:hover::after {
+  background-color: rgba(75, 75, 75, 1);
+}
+
+.season_label::after,
+.season_label::before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 50%;
+}
+
+.season_label::before {
+  left: 13px;
+  margin-top: -10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  content: "✓";
+  color: #fff;
+  background-color: rgba(75, 75, 75, 1);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+}
+
+input[type=checkbox]:checked+.season_label::before {
+  opacity: 1;
+}
+
+.input_detail {
+  width: 100%;
+  aspect-ratio: 4.8/1;
+  resize: none;
+}
+
+.products_content_buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.button_back {
+  display: flex;
+  width: 25%;
+  aspect-ratio: 5/1;
+  padding: 13px 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #E0DFDE;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.10);
+  border: none;
+  color: #4B4B4B;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  margin-right: 2%;
+  margin-left: 24%;
+}
+
+.button_store {
+  display: flex;
+  width: 25%;
+  aspect-ratio: 5/1;
+  padding: 13px 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #F5C800;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.10);
+  border: none;
+  color: #4B4B4B;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  margin-right: 20%;
+  height: auto;
+}
