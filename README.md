@@ -23,7 +23,7 @@
 ・Laravel 8.83.27  
 ・MySQL 8.0.26
 
-## ER 図
+## ER 図(表示されない場合は再読み込みしてください。）
 
 ![ER drawio](https://github.com/user-attachments/assets/221367d2-80dd-4cf3-9ab8-f4c290d1763d)
 
