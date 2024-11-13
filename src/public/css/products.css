@@ -120,6 +120,7 @@
 
 .card_button {
   border: none;
+  text-decoration: none;
 }
 
 .card_names {

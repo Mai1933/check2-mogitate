@@ -33,18 +33,15 @@
       <div class="products_content_cards">
         @foreach ($products as $product)
       <div class="card">
-        <form action="products/" method="get">
-        @csrf
         <input type="hidden" name="product_id" value="{{ $product->id }}">
-        <button type="submit" class="card_button">
-          <img src="{{ asset('images/' . $product->image) }}" alt="fruit" class="card_img"
+        <a class="card_button" href="{{ route('product.detail', ['id' => $product->id]) }}">
+        <img src="{{ asset('storage/' . $product->image) }}" alt="fruit" class="card_img"
           style="width: 100%; height: auto;">
-          <div class="card_names">
+        <div class="card_names">
           <span class="card_names-name">{{ $product->name }}</span>
           <span class="card_names-price">￥{{ $product->price }}</span>
-          </div>
-        </button>
-        </form>
+        </div>
+        </a>
       </div>
     @endforeach
         @if (count($products) > '6')

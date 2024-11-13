@@ -1,3 +1,10 @@
+.info_error-message {
+  color: #FD0707;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+}
+
 .products {
   background: #F8F8F8;
   margin-top: 0;
@@ -35,7 +42,7 @@ form {
 .products_content_info-wrap {
   width: 100%;
   display: flex;
-  align-items: first baseline;
+  align-items: last baseline;
   justify-content: space-between;
 }
 
@@ -44,7 +51,11 @@ form {
   min-width: 300px;
 }
 
-.upload_img {}
+.upload_img {
+  width: 100%;
+  max-width: 370px;
+  aspect-ratio: 1.33/1;
+}
 
 .input_img {}
 
@@ -166,6 +177,7 @@ input[type=checkbox]:checked+.season_label::before {
   font-weight: 600;
   margin-right: 2%;
   margin-left: 24%;
+  text-decoration: none;
 }
 
 .button_store {
@@ -188,10 +200,7 @@ input[type=checkbox]:checked+.season_label::before {
 }
 
 .button_delete {
-  width: 4%;
   aspect-ratio: 1/1;
+  border: none;
 }
 
-.button_delete-img {
-  z-index: 100;
-}

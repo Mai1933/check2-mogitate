@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Season;
@@ -43,16 +44,27 @@ class ProductController extends Controller
     }
 
 
-    public function detail(Request $request)
+    public function detail($id)
     {
-        $product = Product::with('season')->find($request->product_id);
-        $seasons = Season::all();
-        return view('detail', compact('product', 'season'));
+        $product = Product::find($id);
+        return view('detail', compact('product'));
     }
 
     public function register()
     {
         return view('register');
+    }
+
+    public function update(ProductRequest $request)
+    {
+        $product = $request->only(['name', 'price', 'season_id', 'description']);
+        $file_name = $request->file('image')->getClientOriginalName();
+        $image_path = $request->file('image')->storeAs('public', $file_name);
+        $product['image'] = $file_name;
+
+        Product::find($request->id)->update($product);
+
+        return redirect('/products');
     }
 
 }
