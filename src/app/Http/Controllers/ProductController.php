@@ -15,7 +15,7 @@ class ProductController extends Controller
     public function products()
     {
         $seasons = Season::all();
-        $products = Product::with('season')->paginate(6);
+        $products = Product::with('seasons')->paginate(6);
 
         return view('products', compact('seasons', 'products'));
     }
@@ -38,7 +38,7 @@ class ProductController extends Controller
     */
     public function search(Request $request)
     {
-        $products = Product::with('season')->KeyWordSearch($request->keyword)->paginate(6);
+        $products = Product::with('seasons')->KeyWordSearch($request->keyword)->paginate(6);
         $seasons = Season::all();
 
         return view('products', compact('products', 'seasons'));
@@ -62,8 +62,8 @@ class ProductController extends Controller
 
     public function detail($id)
     {
-        $product = Product::with('season')->find($id);
-        $seasons = Product::find($id)->seasons;
+        $product = Product::find($id);
+        $seasons = $product->seasons;
         return view('detail', compact('product','seasons'));
     }
 

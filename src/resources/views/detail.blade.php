@@ -38,14 +38,14 @@
         <li class="info_error-message">{{ $message }}</li>
       @endforeach
             <p class="info_name">季節</p>
-            <input type="checkbox" name="season_id[]" class="input_season" value="1" id="check1" {{ $seasons->id == 1 ? 'checked' : '' }}>
-            <label for="check1" class="season_label">春</label>
-            <input type="checkbox" name="season_id[]" class="input_season" value="2" id="check2" {{ $seasons->id == 2 ? 'checked' : '' }}>
-            <label for="check2" class="season_label">夏</label>
-            <input type="checkbox" name="season_id[]" class="input_season" value="3" id="check3" {{ $seasons->id == 3 ? 'checked' : '' }}>
-            <label for="check3" class="season_label">秋</label>
-            <input type="checkbox" name="season_id[]" class="input_season" value="4" id="check4" {{ $seasons->id == 4 ? 'checked' : '' }}>
-            <label for="check4" class="season_label">冬</label>
+        <input type="checkbox" name="season_id[]" class="input_season" value="1" id="check1" @if ($seasons->contains('id', 1)) checked @endif>
+        <label for="check1" class="season_label">春</label>
+        <input type="checkbox" name="season_id[]" class="input_season" value="2" id="check2" @if ($seasons->contains('id', 2)) checked @endif>
+        <label for="check2" class="season_label">夏</label>
+        <input type="checkbox" name="season_id[]" class="input_season" value="3" id="check3" @if ($seasons->contains('id', 3)) checked @endif>
+        <label for="check3" class="season_label">秋</label>
+        <input type="checkbox" name="season_id[]" class="input_season" value="4" id="check4" @if ($seasons->contains('id', 4)) checked @endif>
+        <label for="check4" class="season_label">冬</label>
             <p class="info_error-message">
               @error('season_id')
           {{ $message }}

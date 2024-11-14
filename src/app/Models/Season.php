@@ -12,7 +12,7 @@ class Season extends Model
         'id'
     ];
 
-    public function product()
+    public function products()
     {
         return $this->belongsToMany(Product::class,);
     }
