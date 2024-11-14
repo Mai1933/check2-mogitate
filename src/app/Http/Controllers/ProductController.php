@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
+use App\Http\Requests\RegisterRequest;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Season;
@@ -37,17 +38,10 @@ class ProductController extends Controller
     */
     public function search(Request $request)
     {
-        $products = Product::with('season')->KeyWordSearch($request->keyword)->get();
+        $products = Product::with('season')->KeyWordSearch($request->keyword)->paginate(6);
         $seasons = Season::all();
 
         return view('products', compact('products', 'seasons'));
-    }
-
-
-    public function detail($id)
-    {
-        $product = Product::find($id);
-        return view('detail', compact('product'));
     }
 
     public function register()
@@ -55,8 +49,31 @@ class ProductController extends Controller
         return view('register');
     }
 
+    public function create(RegisterRequest $request)
+    {
+        $product = $request->only(['name', 'price', 'season_id', 'description']);
+        $file_name = $request->file('image')->getClientOriginalName();
+        $image_path = $request->file('image')->storeAs('public', $file_name);
+        $product['image'] = $file_name;
+
+        Product::create($product);
+        return redirect('/products');
+    }
+
+    public function detail($id)
+    {
+        $product = Product::with('season')->find($id);
+        $seasons = Product::find($id)->seasons;
+        return view('detail', compact('product','seasons'));
+    }
+
     public function update(ProductRequest $request)
     {
+        if ($request->has('delete')) {
+            Product::find($request->id)->delete();
+            return redirect('/products');
+        }
+
         $product = $request->only(['name', 'price', 'season_id', 'description']);
         $file_name = $request->file('image')->getClientOriginalName();
         $image_path = $request->file('image')->storeAs('public', $file_name);

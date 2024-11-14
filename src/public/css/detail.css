@@ -1,8 +1,9 @@
 .info_error-message {
   color: #FD0707;
-  font-size: 14px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 300;
+  list-style-type: none;
 }
 
 .products {
@@ -57,7 +58,9 @@ form {
   aspect-ratio: 1.33/1;
 }
 
-.input_img {}
+.input_img {
+  margin-top: 5%;
+}
 
 .info_others {
   width: 50%;
@@ -81,6 +84,7 @@ form {
   font-size: 18px;
   font-style: normal;
   font-weight: 300;
+  padding: 2% 2%;
 }
 
 
@@ -152,6 +156,7 @@ input[type=checkbox]:checked+.season_label::before {
   font-size: 18px;
   font-style: normal;
   font-weight: 300;
+  padding: 2% 2%;
 }
 
 .products_content_buttons {

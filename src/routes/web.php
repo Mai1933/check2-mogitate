@@ -7,10 +7,12 @@ Route::get('/products', [ProductController::class, 'products']);
 
 Route::post('/products', [ProductController::class, 'products']);
 
-Route::get('/products/{id}', [ProductController::class, 'detail'])->name('product.detail');
-
 Route::get('/products/register', [ProductController::class, 'register']);
 
-Route::get('/products/search', [ProductController::class, 'search']);
+Route::post('/products/register', [ProductController::class, 'create']);
+
+Route::get('/products/{id}', [ProductController::class, 'detail'])->name('product.detail');
+
+Route::post('/products/search', [ProductController::class, 'search']);
 
 Route::patch('/products/update', [ProductController::class, 'update']);

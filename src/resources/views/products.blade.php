@@ -13,7 +13,7 @@
     </div>
     <div class="products_content">
       <div class="products_content_search">
-        <form action="products/search" method="=get">
+        <form action="products/search" method="post" id="search">
           @csrf
           <div class="search_name">
             <input type="text" class="search_name_input" name="keyword" placeholder="商品名で検索"
@@ -32,23 +32,20 @@
       </div>
       <div class="products_content_cards">
         @foreach ($products as $product)
-      <div class="card">
-        <input type="hidden" name="product_id" value="{{ $product->id }}">
+        <div class="card">
         <a class="card_button" href="{{ route('product.detail', ['id' => $product->id]) }}">
         <img src="{{ asset('storage/' . $product->image) }}" alt="fruit" class="card_img"
           style="width: 100%; height: auto;">
+        <input type="hidden" name="product_id" value="{{ $product->id }}">
         <div class="card_names">
           <span class="card_names-name">{{ $product->name }}</span>
           <span class="card_names-price">￥{{ $product->price }}</span>
         </div>
         </a>
-      </div>
+        </div>
     @endforeach
-        @if (count($products) > '6')
-      {{ $products->links() }}
-    @endif
+        {{ $products->links() }}
       </div>
     </div>
-  </div>
 </main>
 @endsection

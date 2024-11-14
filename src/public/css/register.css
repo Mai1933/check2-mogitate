@@ -50,13 +50,27 @@
   margin: 0 2%;
 }
 
-.input_content {
+::placeholder {
   color: #E0DFDE;
-  font-size: 16px;
+  font-size: 18px;
+}
+
+.info_error-message {
+  color: #FD0707;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  list-style-type: none;
+}
+
+.input_content {
+  color: #4B4B4B;
+  font-size: 18px;
   font-style: normal;
   font-weight: 300;
   width: 100%;
   aspect-ratio: 18/1;
+  padding: 1% 1%;
 }
 
 .input_img {
@@ -128,6 +142,8 @@ input[type=checkbox]:checked+.season_label::before {
   width: 100%;
   aspect-ratio: 4.8/1;
   resize: none;
+  padding: 1% 1%;
+  font-size: 18px;
 }
 
 .products_content_buttons {
@@ -155,6 +171,7 @@ input[type=checkbox]:checked+.season_label::before {
   font-weight: 600;
   margin-right: 2%;
   margin-left: 24%;
+  text-decoration: none;
 }
 
 .button_store {
