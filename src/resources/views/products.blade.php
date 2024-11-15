@@ -32,17 +32,17 @@
       </div>
       <div class="products_content_cards">
         @foreach ($products as $product)
-        <div class="card">
+      <div class="card">
         <a class="card_button" href="{{ route('product.detail', ['id' => $product->id]) }}">
         <img src="{{ asset('storage/' . $product->image) }}" alt="fruit" class="card_img"
-          style="width: 100%; height: auto;">
+          style="width: 100%; aspect-ratio: 1.38/1;">
         <input type="hidden" name="product_id" value="{{ $product->id }}">
         <div class="card_names">
           <span class="card_names-name">{{ $product->name }}</span>
           <span class="card_names-price">￥{{ $product->price }}</span>
         </div>
         </a>
-        </div>
+      </div>
     @endforeach
         {{ $products->links() }}
       </div>

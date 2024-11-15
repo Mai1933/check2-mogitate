@@ -51,12 +51,13 @@ class ProductController extends Controller
 
     public function create(RegisterRequest $request)
     {
-        $product = $request->only(['name', 'price', 'season_id', 'description']);
+        $product = $request->only(['name', 'price', 'description']);
         $file_name = $request->file('image')->getClientOriginalName();
         $image_path = $request->file('image')->storeAs('public', $file_name);
         $product['image'] = $file_name;
 
         Product::create($product);
+        $product->seasons()->sync($request->season_id);
         return redirect('/products');
     }
 
@@ -64,7 +65,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $seasons = $product->seasons;
-        return view('detail', compact('product','seasons'));
+        return view('detail', compact('product', 'seasons'));
     }
 
     public function update(ProductRequest $request)
@@ -74,12 +75,14 @@ class ProductController extends Controller
             return redirect('/products');
         }
 
-        $product = $request->only(['name', 'price', 'season_id', 'description']);
+        $productData = $request->only(['name', 'price', 'description']);
         $file_name = $request->file('image')->getClientOriginalName();
         $image_path = $request->file('image')->storeAs('public', $file_name);
-        $product['image'] = $file_name;
+        $productData['image'] = $file_name;
 
-        Product::find($request->id)->update($product);
+        $product = Product::find($request->id);
+        $product->update($productData);
+        $product->seasons()->sync($request->season_id);
 
         return redirect('/products');
     }
