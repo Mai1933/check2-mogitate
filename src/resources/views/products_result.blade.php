@@ -56,7 +56,7 @@
         </a>
       </div>
     @endforeach
-        {{ $products->links() }}
+        {{ $products->appends(['sort' => $sort])->links() }}
       </div>
     </div>
 </main>
