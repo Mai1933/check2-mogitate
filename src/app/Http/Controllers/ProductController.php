@@ -7,8 +7,6 @@ use App\Http\Requests\RegisterRequest;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Season;
-use Illuminate\Support\Facades\DB;
-use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class ProductController extends Controller
 {
@@ -74,12 +72,12 @@ class ProductController extends Controller
 
     public function create(RegisterRequest $request)
     {
-        $product = $request->only(['name', 'price', 'description']);
+        $productData = $request->only(['name', 'price', 'description']);
         $file_name = $request->file('image')->getClientOriginalName();
         $image_path = $request->file('image')->storeAs('public', $file_name);
-        $product['image'] = $file_name;
+        $productData['image'] = $file_name;
 
-        Product::create($product);
+        $product = Product::create($productData);
         $product->seasons()->sync($request->season_id);
         return redirect('/products');
     }

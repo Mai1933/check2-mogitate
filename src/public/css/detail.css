@@ -20,8 +20,6 @@
   width: 53%;
 }
 
-.products_content_index {}
-
 form {
   width: 100%;
 }
@@ -85,10 +83,6 @@ form {
   font-style: normal;
   font-weight: 300;
   padding: 2% 2%;
-}
-
-
-.input_season {
 }
 
 input[type=checkbox] {

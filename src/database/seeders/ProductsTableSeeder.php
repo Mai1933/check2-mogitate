@@ -7,11 +7,6 @@ use Illuminate\Support\Facades\DB;
 
 class ProductsTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $param = [

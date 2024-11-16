@@ -20,9 +20,6 @@
               value="{{ old('keyword') }}">
             <button class="search_name_submit" type="submit">検索</button>
           </div>
-          <!--</form>
-        <form action="products/sort" method="post">
-          @csrf-->
           <p class="search_sort_ttl">価格順で表示</p>
           <select name="sort" id="" class="search_sort_select" onchange="submit(this.form)">
             <option value="" disabled selected>価格で並べ替え</option>
@@ -30,32 +27,32 @@
             <option value="2" class="sort_option" {{$sort === '1' ? 'selected' : ''}}>安い順に表示</option>
           </select>
           @if($sort === '1')
-        <label class="sort_tag">
-        <span class="sort_tag-content">高い順に表示</span>
-        <a class="sort_tag-reset" href="/products">×</a>
-        </label>
-      @elseif($sort === '2')
-      <label class="sort_tag">
-      <span class="sort_tag-content">安い順に表示</span>
-      <a class="sort_tag-reset" href="/products">×</a>
-      </label>
-    @endif
+          <label class="sort_tag">
+            <span class="sort_tag-content">高い順に表示</span>
+            <a class="sort_tag-reset" href="/products">×</a>
+          </label>
+          @elseif($sort === '2')
+          <label class="sort_tag">
+            <span class="sort_tag-content">安い順に表示</span>
+            <a class="sort_tag-reset" href="/products">×</a>
+          </label>
+          @endif
         </form>
       </div>
       <div class="products_content_cards">
         @foreach ($products as $product)
-      <div class="card">
-        <a class="card_button" href="{{ route('product.detail', ['id' => $product->id]) }}">
-        <img src="{{ asset('storage/' . $product->image) }}" alt="fruit" class="card_img"
+        <div class="card">
+          <a class="card_button" href="{{ route('product.detail', ['id' => $product->id]) }}">
+          <img src="{{ asset('storage/' . $product->image) }}" alt="fruit" class="card_img"
           style="width: 100%; aspect-ratio: 1.38/1;">
-        <input type="hidden" name="product_id" value="{{ $product->id }}">
-        <div class="card_names">
-          <span class="card_names-name">{{ $product->name }}</span>
-          <span class="card_names-price">￥{{ $product->price }}</span>
+          <input type="hidden" name="product_id" value="{{ $product->id }}">
+          <div class="card_names">
+            <span class="card_names-name">{{ $product->name }}</span>
+            <span class="card_names-price">￥{{ $product->price }}</span>
+          </div>
+          </a>
         </div>
-        </a>
-      </div>
-    @endforeach
+        @endforeach
         {{ $products->links() }}
       </div>
     </div>

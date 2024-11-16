@@ -10,16 +10,16 @@
     <div class="register_content">
       <p class="register_form-ttl">商品登録</p>
       <form action="/products/register" class="register_form" method="post" enctype="multipart/form-data">
-        @csrf
+      @csrf
         <div class="input_ttls_row">
           <span class="input_ttl">商品名</span>
           <span class="input_require">必須</span>
         </div>
         <input type="text" name="name" class="input_content" placeholder="商品名を入力">
         <p class="info_error-message">
-          @error('name')
+        @error('name')
         {{ $message }}
-      @enderror
+        @enderror
         </p>
 
         <div class="input_ttls_row">
@@ -28,9 +28,9 @@
         </div>
         <input type="text" name="price" class="input_content" placeholder="値段を入力">
         <p class="info_error-message">
-          @error('price')
+        @error('price')
         {{ $message }}
-      @enderror
+        @enderror
         </p>
 
         <div class="input_ttls_row">
@@ -39,9 +39,9 @@
         </div>
         <input type="file" name="image" class="input_img">
         <p class="info_error-message">
-          @error('image')
+        @error('image')
         {{ $message }}
-      @enderror
+        @enderror
         </p>
 
         <div class="input_ttls_row">
@@ -58,9 +58,9 @@
         <input type="checkbox" name="season_id" class="input_season" value="4" id="check4">
         <label for="check4" class="season_label">冬</label>
         <p class="info_error-message">
-          @error('season_id')
+        @error('season_id')
         {{ $message }}
-      @enderror
+        @enderror
         </p>
 
         <div class="input_ttls_row">
@@ -69,9 +69,9 @@
         </div>
         <textarea class="input_detail" name="description" placeholder="商品の説明を入力"></textarea>
         <p class="info_error-message">
-          @error('description')
+        @error('description')
         {{ $message }}
-      @enderror
+        @enderror
         </p>
 
         <div class="products_content_buttons">

@@ -6,7 +6,7 @@
 
 1. git clone リンク
 2. docker-compose up -d --build
-3. ＊MyAQL は、OS によって起動しない場合があるのでそれぞれの PC に合わせて docker-compose.yml ファイルを編集してください。
+3. ＊MySQL は、OS によって起動しない場合があるのでそれぞれの PC に合わせて docker-compose.yml ファイルを編集してください。
 
 ### Laravel 環境構築
 
