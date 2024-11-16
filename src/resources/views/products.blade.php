@@ -20,14 +20,15 @@
               value="{{ old('keyword') }}">
             <button class="search_name_submit" type="submit">検索</button>
           </div>
-          <!--<div class="search_sort">
-            <p class="search_sort_ttl">価格順で表示</p>
-            <select name="price" id="" class="search_sort_select">
-              <option value="">価格で並べ替え</option>
-              <option value="">高い順に表示</option>
-              <option value="">安い順に表示</option>
-            </select>
-          </div>-->
+        <!--</form>
+        <form action="products/sort" method="post">
+          @csrf-->
+          <p class="search_sort_ttl">価格順で表示</p>
+          <select name="sort" id="" class="search_sort_select" onchange="submit(this.form)">
+            <option value="" disabled selected>価格で並べ替え</option>
+            <option value="1" name="sort">高い順</option>
+            <option value="2" name="sort">安い順</option>
+          </select>
         </form>
       </div>
       <div class="products_content_cards">
